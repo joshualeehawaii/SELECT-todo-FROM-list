@@ -37,3 +37,15 @@ ALTER TABLE tasks ADD COLUMN completed_at timestamp DEFAULT NULL;
 --change the updated_at column to not allow NULL values, and have a default value of now()
 ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
 ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
+
+--create a new task, by only setting values (not defining which columns)
+--id = default value
+--title = 'Study SQL'
+--description = 'Complete this exercise'
+--created_at = now()
+--updated_at = now()
+--completed_at = NULL
+
+INSERT INTO tasks
+VALUES (DEFAULT, 'Study SQL', 'Complete this exercise', NOW(), NOW(), NULL);
+
