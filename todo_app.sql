@@ -45,7 +45,21 @@ ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
 --created_at = now()
 --updated_at = now()
 --completed_at = NULL
-
 INSERT INTO tasks
 VALUES (DEFAULT, 'Study SQL', 'Complete this exercise', NOW(), NOW(), NULL);
+
+--create a new task
+--title = 'Study PostgreSQL'
+--description = 'Read all the documentation'
+INSERT INTO tasks (title, description)
+VALUES('Study PostgreSQL', 'Read all the documentation');
+
+--select all the titles of tasks that are not yet completed
+SELECT title FROM tasks WHERE completed_at = NULL;
+
+--update the task with a title of 'Study SQL' to be completed as of now
+UPDATE tasks SET completed_at = NOW() WHERE title = 'Study SQL';
+
+--select all titles and descriptions of tasks that are not yet completed
+
 
