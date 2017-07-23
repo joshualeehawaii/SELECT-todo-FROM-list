@@ -61,5 +61,5 @@ SELECT title FROM tasks WHERE completed_at = NULL;
 UPDATE tasks SET completed_at = NOW() WHERE title = 'Study SQL';
 
 --select all titles and descriptions of tasks that are not yet completed
-
+SELECT title, description FROM tasks WHERE completed_at = NULL;
 
